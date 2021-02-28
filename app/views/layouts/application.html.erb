@@ -11,6 +11,7 @@
   <body>
     <div class='calculator'>
       <div class='display backlight'>
+      <center><%=link_to "ENTER", new_user_path %></center>
        </div>
         <%= yield %>
 
@@ -51,12 +52,12 @@
         <li>
           <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">By Ocassion</span></a>
         </li>
-        <li>
-        <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">By Manufacturer</span></a>
-      </li>
       <li>
       <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">Accessories</span></a>
     </li>
+    <li>
+    <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">By SKU</span></a>
+  </li>
 
       </ul>
       <ul class="nav-flyout">
@@ -67,6 +68,9 @@
         </li>
         <li>
           <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""><small>Login</small></span></a>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""><small>Add Store</small></span></a>
         </li>
         <li>
         <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""><small>Exit Aisle</small></span></a>
