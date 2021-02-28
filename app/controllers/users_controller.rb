@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params)
         if @user.save
-
+            redirect_to cards_path
         else
             render :new
         end
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
     private 
 
     def user_params 
-        params.require(:user).permit(:access_id, :store_id, :notes, :EmployeeInIt)
+        params.require(:user).permit(:access_id, :store_id, :notes, :EmployeeInit)
     end     
 end

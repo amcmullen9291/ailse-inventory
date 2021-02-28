@@ -2,7 +2,7 @@
 <%= render '/users/errors' %>
 <div class= "whiteboard">
 <center><h2>Enter Store Code</h2></center>
-    <center><%= form_for @user do |f| %>
+    <center><%= form_with model: @user do |f| %>
     <p>Access Num -- StoreID -- EmployeeID<br></p>
     <%= f.text_field :access_id%>
     <%= f.text_field :store_id %>
@@ -11,7 +11,3 @@
  <%end%>
  </center>
 </div>
-
-<%= form_tag do %>
-    Form contents
-  <% end %>
