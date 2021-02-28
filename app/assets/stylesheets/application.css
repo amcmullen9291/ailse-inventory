@@ -207,6 +207,12 @@ Hover
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.nav-standout{
+  color:red;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 
 .error-messages{
   font-style: oblique;
