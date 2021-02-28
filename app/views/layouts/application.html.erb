@@ -12,8 +12,13 @@
     <div class='calculator'>
       <div class='display backlight'>
       <br>
+      <div class="error-messages">
+      <center><%= render '/aisles/errors' %></center>
+
+      </div>
+
       <center><% flash.each do |type, msg| %>
-        <div class="alert alert-info"
+        <div class="alert alert-info">
           <%= msg %>
         </div>
       <% end %>
@@ -78,7 +83,7 @@
         <li></li>
         <li class="nav-add"><b><u>ADD</u></b>
         <li>
-          <small><%=link_to "Location", new_user_path%></small>
+          <small><%=link_to "User", new_user_path%></small>
         </li>
         <li>
         <small><%=link_to "Manufacturer", new_manufacturer_path%></small>
@@ -86,10 +91,12 @@
       <li>
       <small><%=link_to "Add Aisle", new_aisle_path%></small>
     </li>
+    <li>
+      <small><%=link_to "Occasion", new_occasion_path%></small>
+    </li>
       <li></li>
         <li>
-        <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""><small>Exit Aisle</small></span></a>
-      </li>
+        <li class="nav-add"><b><u>Exit Aisle</u></b>      </li>
       <li>
       <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""></span></a>
     </li>

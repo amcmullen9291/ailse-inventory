@@ -206,3 +206,10 @@ Hover
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+
+.error-messages{
+  font-style:oblique ;
+  background: lightcoral;
+  
+}
