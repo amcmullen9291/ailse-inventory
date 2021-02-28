@@ -13,6 +13,7 @@ class ManufacturersController < ApplicationController
         end
     end 
 
+
     private 
 
     def manufacturer_params 

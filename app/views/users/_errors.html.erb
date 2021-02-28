@@ -2,7 +2,7 @@
 <div id="error_explanation">
     <ul>
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li><%= flash.notice = "#{msg}" %></li>
     <% end %>
     </ul>
   </div>

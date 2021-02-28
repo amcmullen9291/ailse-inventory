@@ -12,6 +12,9 @@ class AislesController < ApplicationController
         end
     end 
 
+    def destroy 
+    end 
+
     private 
 
     def aisle_params 
