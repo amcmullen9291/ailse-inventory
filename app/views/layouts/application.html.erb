@@ -13,8 +13,55 @@
       <div class='display backlight'>
         <%=render '/layouts/open' %>
        </div>
-        <section class='whiteboard'>
         <%= yield %>
+
+        <section class="app">
+    <aside class="sidebar">
+         <header>
+        Tasks
+      </header>
+    <nav class="sidebar-nav">
+ <br>
+ <br>
+ <br>
+      <ul>
+        <li>
+          <a href="#"><i class="ion-bag"></i> <span></span></a>
+          <ul class="nav-flyout">
+            <li><b><u>Adjustments</u></b>
+            </li>
+            <li>
+              <a href="#"><i class="ion-ios-clock-outline"></i>By Occasion</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-android-star-outline"></i>By Manufacturer</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-heart-broken"></i>By Aisle</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-settings"></i> <span class="">Locator</span></a>
+          <ul class="nav-flyout">
+            <li>
+          </ul>
+        </li>
+        <li><b><u>Locator</u></b>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">By Ocassion</span></a>
+        </li>
+        <li>
+        <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">By Manufacturer</span></a>
+      </li>
+      <li>
+      <a href="#"><i class="ion-ios-medical-outline"></i> <span class="">Accessories</span></a>
+    </li>
+
+      </ul>
+    </nav>
+  </aside>
 
         </section>
     </div>
