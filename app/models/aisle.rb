@@ -4,4 +4,5 @@ class Aisle < ApplicationRecord
     has_many :manufacturers, through: :cards
 
     validates_presence_of :aisle_number
+    validates :aisle_number, numericality: true
 end

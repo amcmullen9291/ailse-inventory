@@ -10,6 +10,11 @@
 
   <body>
     <div class='calculator'>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
       <div class='display backlight'>
       <center><%=link_to "ENTER", new_user_path %></center>
        </div>

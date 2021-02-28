@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params)
         if @user.save
-            redirect_to cards_path
+            redirect_to cards_path, notice: "New User added"
         else
             render :new
         end
