@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_003745) do
+ActiveRecord::Schema.define(version: 2021_02_28_040035) do
 
   create_table "aisles", force: :cascade do |t|
     t.string "aisle_number"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_003745) do
     t.integer "occasion_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sku"
+    t.integer "manufacturer_id"
     t.index ["aisle_id"], name: "index_cards_on_aisle_id"
     t.index ["occasion_id"], name: "index_cards_on_occasion_id"
   end
@@ -51,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_003745) do
     t.integer "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "notes"
+    t.string "EmployeeInit"
   end
 
 end
