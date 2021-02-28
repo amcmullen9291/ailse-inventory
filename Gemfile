@@ -31,6 +31,7 @@ gem 'sku_generator', '~> 0.0.2'
 gem 'omniauth', '~> 2.0', '>= 2.0.3'
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+gem 'bootstrap', '~> 4.6'
 
 
 # Reduces boot times through caching; required in config/boot.rb
