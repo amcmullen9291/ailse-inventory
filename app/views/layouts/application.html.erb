@@ -13,12 +13,11 @@
       <div class='display backlight'>
       <br>
       <div class="error-messages">
-      <center><%= render '/aisles/errors' %></center>
 
       </div>
 
       <center><% flash.each do |type, msg| %>
-        <div class="alert alert-info">
+        <div class="error-messages">
           <%= msg %>
         </div>
       <% end %>
