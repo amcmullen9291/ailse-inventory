@@ -10,13 +10,14 @@
 
   <body>
     <div class='calculator'>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
       <div class='display backlight'>
-      <center><%=link_to "ENTER", new_user_path %></center>
+      <br>
+      <center><% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
+</center>  
        </div>
         <%= yield %>
 
@@ -82,6 +83,9 @@
         <li>
         <small><%=link_to "Manufacturer", new_manufacturer_path%></small>
       </li>
+      <li>
+      <small><%=link_to "Add Aisle", new_aisle_path%></small>
+    </li>
       <li></li>
         <li>
         <a href="#"><i class="ion-ios-medical-outline"></i> <span class=""><small>Exit Aisle</small></span></a>
