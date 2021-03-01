@@ -237,7 +237,7 @@ li{
   top: 9em;
   right: 28em;
   float: left;
-  width: 30%;
+  width: 40%;
   height: 300px; /* only for demonstration, should be removed */
   background:skyblue;
   padding: 20px;
@@ -259,8 +259,3 @@ img {
   height: 100%;
 }
 
-area{
-  overflow:hidden; 
-  overflow-y:scroll;
-  position:static;
-}

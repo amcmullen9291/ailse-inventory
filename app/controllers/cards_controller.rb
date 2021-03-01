@@ -4,7 +4,7 @@ class CardsController < ApplicationController
     end
 
     def create 
-        @card = Breed.new(card_params)
+        @card = Card.new(card_params)
         if @card.save
             @card.avatar.attach(params[:avatar])
             @card.save
@@ -31,7 +31,7 @@ class CardsController < ApplicationController
 
     private 
     def card_params
-        params.require(:card).permit(:desription, :in_stock, :aisle_id, :occasion_id, :sku, :manufacturer_id, :avatar)
+        params.require(:card).permit(:description, :in_stock, :aisle_id, :occasion_id, :sku, :manufacturer_id, :avatar)
     end
-    
+
 end
