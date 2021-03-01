@@ -36,6 +36,7 @@ class OccasionsController < ApplicationController
         params.require(:occasion).permit(:name_of)
     end 
     
+    # probably not needed...
     def occasion_name=(name)
         self.occasion = Occasion.find_or_create(:name => name)
         self.occasion << occasion 

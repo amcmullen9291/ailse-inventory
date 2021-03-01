@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.EmployeeInit
             redirect_to root_path, notice: "Welcome"
         else
-          render '/', notice: "Access Denied"
+          render root_path, notice: "Access Denied"
         end
     end
 
