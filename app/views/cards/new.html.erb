@@ -1,7 +1,18 @@
 <%=render  '/layouts/add_occasion' %>
+<% render 'error' %>
 <div class= "whiteboard"
-<div class= "details"
-</div>
-<div class= "details"
-</div>
+    <div class= "details"
+    <center><%= form_with model: @card do |f| %>
+        <%= f.label :"Quality in Stock" %>
+        <%= f.text_field :in_stock %><br>
+    </div>
+    <div class= "details"
+    <%= form.label "Image" %><br>
+    <%= form.file_field :avatar %>
+    <%= f.label :"Description"<br>
+    <%=f.text_area :description, size "60x10"%><br>
+    <br>
+    <%= f.submit "Add Occasion"%>
+    <%end%>
+    </div>
 </div>
