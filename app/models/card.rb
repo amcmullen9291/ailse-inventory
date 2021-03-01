@@ -1,4 +1,5 @@
 class Card < ApplicationRecord
+    serialize :occasion_id
     belongs_to :occasion
     belongs_to :aisle
     # validates_presence_of :sku
