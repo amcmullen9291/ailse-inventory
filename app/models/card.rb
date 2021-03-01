@@ -1,6 +1,7 @@
 class Card < ApplicationRecord
     belongs_to :occasion
     belongs_to :aisle
+    belongs_to :manufacturer
     # validates_presence_of :sku
     validates_presence_of :occasion_id
     validates_presence_of :manufacturer_id
