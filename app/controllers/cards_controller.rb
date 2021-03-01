@@ -32,4 +32,6 @@ class CardsController < ApplicationController
     private 
     def card_params
         params.require(:card).permit(:desription, :in_stock, :aisle_id, :occasion_id, :sku, :manufacturer_id, :avatar)
+    end
+    
 end

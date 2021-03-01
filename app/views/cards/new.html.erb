@@ -1,18 +1,24 @@
 <%=render  '/layouts/add_occasion' %>
 <% render 'error' %>
-<div class= "whiteboard"
-    <div class= "details"
+   <div class= "details">
     <center><%= form_with model: @card do |f| %>
+        Select Occasion:
+        <%=collection_select(:card, :occasion_id, Occasion.all, :id, :name_of) %><br>
+        Manufacturer:
+        <%=collection_select(:manufacturer, :manufactureer_id, Manufacturer.all, :id, :name) %><br>
+        <br>
         <%= f.label :"Quality in Stock" %>
         <%= f.text_field :in_stock %><br>
+
+        In Aisle Number:
+        <%=collection_select(:aisle, :aisle_id, Aisle.all, :id, :aisle_number) %><br>
+
+    
+        <%= f.label "Stock Image" %><br>
+        <%= f.file_field :avatar %>
+        <%= f.label :"Description" %><br>
+        <%=f.text_area :description, size: "25x5" %><br>
+        <br>
+        <%= f.submit "Add Product"%>
+    <%end%></center>
     </div>
-    <div class= "details"
-    <%= form.label "Image" %><br>
-    <%= form.file_field :avatar %>
-    <%= f.label :"Description"<br>
-    <%=f.text_area :description, size "60x10"%><br>
-    <br>
-    <%= f.submit "Add Occasion"%>
-    <%end%>
-    </div>
-</div>
