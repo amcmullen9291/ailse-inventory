@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def welcome 
-        @user = User.new
+         flash.notice = "Aisle Inventory - 2021  ©"
     end 
 
     def new 

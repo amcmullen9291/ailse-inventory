@@ -1,5 +1,5 @@
 class ManufacturersController < ApplicationController
-
+before_action :set_manufacturer, only: [ :show, :edit, :destroy, :update ]
     def new 
         @manufacturer = Manufacturer.new
     end  
@@ -17,6 +17,19 @@ class ManufacturersController < ApplicationController
         @manufacturer = Manufacturer.all
     end 
 
+    def edit
+    end 
+
+    def destory 
+        @manufacturer.destroy
+    end 
+
+    def show
+    end 
+
+    def update 
+    end 
+
 
     private 
 
@@ -24,4 +37,7 @@ class ManufacturersController < ApplicationController
         params.require(:manufacturer).permit(:name)
     end 
 
+    def set_manufacturer 
+        @manufacturer = Manufacturer.find(params[:id])
+    end
 end
