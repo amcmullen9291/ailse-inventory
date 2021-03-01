@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_101618) do
+ActiveRecord::Schema.define(version: 2021_03_01_012652) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,13 +54,12 @@ ActiveRecord::Schema.define(version: 2021_03_01_101618) do
   create_table "cards", force: :cascade do |t|
     t.string "description"
     t.integer "in_stock"
+    t.string "sku"
+    t.string "manufacturer_id"
     t.integer "aisle_id"
     t.integer "occasion_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "sku"
-    t.integer "manufacturer_id"
-    t.string "name_of"
     t.index ["aisle_id"], name: "index_cards_on_aisle_id"
     t.index ["occasion_id"], name: "index_cards_on_occasion_id"
   end
@@ -78,14 +77,14 @@ ActiveRecord::Schema.define(version: 2021_03_01_101618) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "access_id"
+    t.integer "password"
     t.integer "store_id"
+    t.string "EmployeeInit"
+    t.string "password_digest"
+    t.string "notes"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "notes"
-    t.string "EmployeeInit"
-    t.boolean "email_confirmed"
-    t.string "confirm_token"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     def create
         @user = User.find_by_store_id(params[:store_id])
-        if @user && @user.authenticate(params[:access_id])
+        if @user && @user.authenticate(params[:password])
             $status = ()
             session[:user_id] = @user.EmployeeInit
             redirect_to root_path, notice: "Welcome"
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.destroy
-        UserMailer.activity_report.deliver
+        UserMailer.activity_report.deliver_now
         redirect_to root_path, notice: "Goodbye"
       end
 end 
