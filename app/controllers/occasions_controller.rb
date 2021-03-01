@@ -1,5 +1,6 @@
 class OccasionsController < ApplicationController
-    
+    before_action :set_occasion, only: [ :show, :edit, :destroy, :update ]
+
     def index 
         @occasion = Occasion.all
     end 
@@ -38,6 +39,10 @@ class OccasionsController < ApplicationController
     def occasion_name=(name)
         self.occasion = Occasion.find_or_create(:name => name)
         self.occasion << occasion 
+    end 
+
+    def set_occasion 
+        @occasion = Occasion.find(params[:id])
     end
 
 end

@@ -1,4 +1,6 @@
 class AislesController < ApplicationController
+    before_action :set_aisle, only: [ :show, :edit, :destroy, :update ]
+
     def new 
         @aisle = Aisle.new
     end 
@@ -15,9 +17,19 @@ class AislesController < ApplicationController
     def destroy 
     end 
 
+    def show 
+    end 
+
+    def update
+    end 
+
     private 
 
     def aisle_params 
         params.require(:aisle).permit(:aisle_number)
     end
+
+    def set_aisle 
+        @aisle = Aisle.find(params([:id])
+    end 
 end
