@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_012652) do
+ActiveRecord::Schema.define(version: 2021_03_01_051531) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,13 +55,12 @@ ActiveRecord::Schema.define(version: 2021_03_01_012652) do
     t.string "description"
     t.integer "in_stock"
     t.integer "aisle_id"
-    t.integer "occasion_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sku"
     t.integer "manufacturer_id"
+    t.string "name_of"
     t.index ["aisle_id"], name: "index_cards_on_aisle_id"
-    t.index ["occasion_id"], name: "index_cards_on_occasion_id"
   end
 
   create_table "manufacturers", force: :cascade do |t|

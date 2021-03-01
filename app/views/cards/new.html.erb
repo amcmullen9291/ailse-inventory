@@ -3,10 +3,10 @@
    <div class= "details">
     <center><%= form_with model: @card do |f| %>
         <center>Select Occasion:</center><br>
-        <%= collection_check_boxes(:card, :occasion_id, Occasion.all, :id, :name_of) %><br>
+        <%=f.collection_select(:occasion, Occasion.all, :name_of, :name_of) %><br>
         <br>
         Manufacturer:
-        <%=f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, :include_blank => true,) %><br>
+        <%=f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, :include_blank => true) %><br>
         <br>
         <%= f.label :in_stock %>
         <%= f.text_field :in_stock %><br>
