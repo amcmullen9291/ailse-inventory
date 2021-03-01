@@ -12,7 +12,6 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             redirect_to cards_path, notice: "Welcome"
-            activity_notice
         else
             render :new
         end
