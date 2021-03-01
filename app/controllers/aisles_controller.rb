@@ -35,6 +35,7 @@ class AislesController < ApplicationController
     end
 
     def set_aisle 
-        @aisle = Aisle.find(params([:id])
+        @aisle = Aisle.find(params[:id])
     end 
+
 end

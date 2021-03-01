@@ -15,9 +15,10 @@ class SessionsController < ApplicationController
         end
     end
 
-    def logout
-        UserMailer.activity_report.deliver
+    def destroy
         session.destroy
-    end 
+        UserMailer.activity_report.deliver
+        redirect_to root_path, notice: "Goodbye"
+      end
 end 
 
