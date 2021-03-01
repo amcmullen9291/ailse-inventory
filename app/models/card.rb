@@ -7,4 +7,7 @@ class Card < ApplicationRecord
     validates_presence_of :occasion_id
     validates_presence_of :in_stock, numericality: { only_integer: true }
     validates_presence_of :description, length: { maximum: 150 }
+
+    accepts_nested_attributes_for :name_of, allow_destroy: true
+
 end

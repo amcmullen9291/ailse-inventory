@@ -1,0 +1,9 @@
+<%= f.fields_for :name_of do |t| %>
+    <li>
+    <%= t.label :"Occasion type" %>
+    <%= t.text_field [:occasion][][:name_of] %>
+
+    <%= t.label :"Occasion name" %>
+    <%= t.text_field [:occasion][:name_of][] %>          
+    </li>
+  <% end %>

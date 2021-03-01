@@ -9,6 +9,12 @@ class OccasionsController < ApplicationController
     end 
 
     def create 
+        @occasion = Occasion.new(occasion_params)
+        if @occasion.save 
+            redirect_to new_occasion_path, notice: "Occasion Added" 
+        else 
+            redirect_to new_occasion_path, notice: "Occasion Not Added"
+        end
     end 
 
     def show 
@@ -24,12 +30,14 @@ class OccasionsController < ApplicationController
     end 
 
     private 
+
+    def occasion_params 
+        params.require(:occasion).permit(:name_of)
+    end 
+    
     def occasion_name=(name)
         self.occasion = Occasion.find_or_create(:name => name)
         self.occasion << occasion 
     end
 
-    def occasion_name 
-        self.occasion ? self selfoccasion.name:nil 
-    end 
 end
