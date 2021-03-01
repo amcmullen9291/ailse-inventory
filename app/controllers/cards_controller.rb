@@ -7,8 +7,6 @@ class CardsController < ApplicationController
     def create 
         @card = Card.new(card_params)
         if @card.save
-            @card.avatar.attach(params[:avatar])
-            @card.save
             redirect_to cards_path, notice: "Item Added"
         else
             render :new, notice: "Item not added. Try again"
@@ -32,7 +30,7 @@ class CardsController < ApplicationController
 
     private 
     def card_params
-        params.require(:card).permit(:description, :in_stock, :aisle_id, :card, :occasion, :sku, :manufacturer_id, :avatar)
+        params.require(:card).permit(:description, :in_stock, :aisle_id, :card, :occasion_id, :sku, :manufacturer_id, :avatar)
     end
 
     def set_card 
