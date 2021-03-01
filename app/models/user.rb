@@ -5,4 +5,5 @@ class User < ApplicationRecord
     validates_presence_of :EmployeeInit, :message => "not entered"
     validates :notes, length: { maximum: 150 }
 
+    private
 end

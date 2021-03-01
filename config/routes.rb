@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'users#welcome'
-  resources :users
+  resources :users do 
+    get :confirm_email
+  end
   resources :manufacturers
   resources :cards
   resources :occasions

@@ -10,6 +10,7 @@ class CardsController < ApplicationController
             @sku = Faker::Barcode.ean_with_composite_symbology(13)
             @card.sku = @sku
             @card.save 
+            UserMailer.activity_report.deliver
             redirect_to cards_path, notice: "Item #{@sku} Added"
         else
             render :new, notice: "Item not added. Try again"
