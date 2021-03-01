@@ -200,20 +200,20 @@ Hover
     }
   }
 }
-
+/* css for navbar */
 .nav-add{
   color:burlywood;
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+/* css for "add" in nav bar */
 .nav-standout{
   color:lightgray;
   font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-
+/* located in the calulator display */
 .error-messages{
   font-style: oblique;
   background: lightcoral;
@@ -232,6 +232,7 @@ li{
   overflow-y:scroll;
 }
 
+/* works nice on show page. overlaps images */
 .details {
   position:fixed;
   top: 9em;
@@ -243,8 +244,9 @@ li{
   padding: 20px;
   overflow:hidden; 
   overflow-y:scroll;
-  opacity: 75%;
+  opacity: 80%;
 }
+/* only used on show page */
 .frame {
   width: 300px;
   height: 250px;
