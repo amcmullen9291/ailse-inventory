@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+    before_action :set_card, only: [:show, :edit, :update, :destroy]
     def new 
         @card = Card.new
     end
@@ -33,5 +34,9 @@ class CardsController < ApplicationController
     def card_params
         params.require(:card).permit(:description, :in_stock, :aisle_id, :occasion_id, :sku, :manufacturer_id, :avatar)
     end
+
+    def set_card 
+        @card = Card.find(params[:id])
+    end 
 
 end
