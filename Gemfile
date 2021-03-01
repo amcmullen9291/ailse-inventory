@@ -27,7 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 #added gems
-gem 'sku_generator', '~> 0.0.2'
+gem 'faker', '~> 2.16'
 gem 'omniauth', '~> 2.0', '>= 2.0.3'
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
