@@ -1,8 +1,17 @@
 class CardsController < ApplicationController
     def new 
+        @card = Card.new
     end
 
     def create 
+        @card = Breed.new(card_params)
+        if @card.save
+            @card.avatar.attach(params[:avatar])
+            @card.save
+            redirect_to cards_path, notice: "Item Added"
+        else
+            render :new, notice: "Item not added. Try again"
+        end 
     end 
 
     def edit 
