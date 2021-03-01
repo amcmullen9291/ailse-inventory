@@ -9,6 +9,7 @@ Total in Stock: <%= @card.in_stock %> <br>
 <% if @card.avatar.attached?%>
 <image src="<%=(url_for(@card.avatar))%>"> 
 <% end%>
+<%= @card.updated_at %>
 </div>
 <br>
 <%=link_to "Update inventory", root_path %> <br>

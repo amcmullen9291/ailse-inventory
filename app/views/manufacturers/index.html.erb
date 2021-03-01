@@ -1,0 +1,13 @@
+<div class= "whiteboard">
+<ul class= "occasion-list">
+<center><% @manufacturer.each do |manufacturer| %>
+    <ol><%= link_to "Remove #{manufacturer.name}", manufacturer_path(manufacturer),
+    method: :delete,
+    data: { confirm: "Permanently Delete #{manufacturer.name}?" } %></li><br>
+    <li><%= link_to "Edit Title of  #{manufacturer.name}", edit-manufacturer_path(manufacturer) %></li>
+    </ol>
+    <%end%>
+</ul>
+<%= link_to "back", root_path %>
+</center>
+</div>

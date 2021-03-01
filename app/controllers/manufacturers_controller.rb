@@ -13,6 +13,10 @@ class ManufacturersController < ApplicationController
         end
     end 
 
+    def index 
+        @manufacturer = Manufacturer.all
+    end 
+
 
     private 
 
