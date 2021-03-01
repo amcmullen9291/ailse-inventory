@@ -14,5 +14,10 @@ class SessionsController < ApplicationController
           render '/', notice: "Access Denied"
         end
     end
+
+    def logout
+        UserMailer.activity_report.deliver
+        session.destroy
+    end 
 end 
 

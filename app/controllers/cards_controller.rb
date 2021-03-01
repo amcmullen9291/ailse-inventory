@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
     before_action :set_card, only: [:show, :edit, :update, :destroy]
+    after_action :update_notice, only: [:create, :update, :destroy ]
     def new 
         @card = Card.new
     end
@@ -10,7 +11,6 @@ class CardsController < ApplicationController
             @sku = Faker::Barcode.ean_with_composite_symbology(13)
             @card.sku = @sku
             @card.save 
-            UserMailer.activity_report.deliver
             redirect_to cards_path, notice: "Item #{@sku} Added"
         else
             render :new, notice: "Item not added. Try again"
@@ -21,12 +21,19 @@ class CardsController < ApplicationController
     end 
 
     def update 
+        if @card.update(card_params)
+            redirect_to cards_path, notice: "Item #{@card.sku} Updated"
+        else
+            render :edit, notice: "record not updated"
+        end
     end 
 
     def show 
     end 
 
     def destroy
+        @card.destroy
+        redirect_to root_path
     end 
 
     def index 
@@ -41,5 +48,9 @@ class CardsController < ApplicationController
     def set_card 
         @card = Card.find(params[:id])
     end 
+
+    # def update_notice
+    #     $status << "#{@card.sku} updated"
+    # end 
 
 end

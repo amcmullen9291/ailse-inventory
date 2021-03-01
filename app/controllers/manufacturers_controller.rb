@@ -1,5 +1,7 @@
 class ManufacturersController < ApplicationController
 before_action :set_manufacturer, only: [ :show, :edit, :destroy, :update ]
+after_action :update_notice, only: [:create, :update, :destroy ]
+
     def new 
         @manufacturer = Manufacturer.new
     end  
@@ -28,6 +30,12 @@ before_action :set_manufacturer, only: [ :show, :edit, :destroy, :update ]
     end 
 
     def update 
+        if @manufacturer.update(manufacturer_params)
+            redirect_to cards_path, notice: "Item #{@manufacturer.name} Updated"
+        else
+            render :edit, notice: "record not updated"
+        end
+
     end 
 
 
@@ -40,4 +48,6 @@ before_action :set_manufacturer, only: [ :show, :edit, :destroy, :update ]
     def set_manufacturer 
         @manufacturer = Manufacturer.find(params[:id])
     end
+
+
 end
