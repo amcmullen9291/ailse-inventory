@@ -1,16 +1,13 @@
 class UserMailer < ActionMailer::Base
-    default :from => "amcmullen9291@gmail.com"
+    default :from => "BreededShelter@protonmail.com"
 
  def activity_report
-   @url  = 'http://[::1]:3000/logout'
-    mail(:to => "BreededShelter@protonmail.com", :subject => "Store Activity")
+    mail(:to => "amcmullen9291@gmail.com", :subject => "Store Activity")
  end
 
 
  def aisle_inventory
-   @user = params[:user]
-   @url  = 'http://[::1]:3000/login'
-   mail(to: 'BreededShelter@protonmail.com', subject: 'Inventory Activity')
+   mail(to: 'amcmullen9291@gmail.com', subject: 'Inventory Activity')
  end
 
 end

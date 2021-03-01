@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.EmployeeInit
             redirect_to cards_path, notice: "Welcome"
         else
-            render :new
+            render :new, notice: "Access Denied"
         end
     end 
 

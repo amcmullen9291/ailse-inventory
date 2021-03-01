@@ -9,9 +9,11 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:password])
             $status = ()
             session[:user_id] = @user.EmployeeInit
-            redirect_to root_path, notice: "Welcome"
+            UserMailer.aisle_inventory.deliver_now
+            redirect_to cards_path, notice: "Welcome"
         else
-          render root_path, notice: "Access Denied"
+
+          redirect_to login_path, notice: "Access Denied"
         end
     end
 

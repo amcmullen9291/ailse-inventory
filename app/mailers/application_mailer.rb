@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Status@AisleInventory.com'
+  default from: 'BreededShelter@protonmail.com'
   layout 'mailer'
 end
