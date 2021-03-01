@@ -21,6 +21,11 @@ class AislesController < ApplicationController
     end 
 
     def update
+        if @aisle.update(aisle_params)
+            redirect_to root_path, notice: "update recorded"
+        else
+            render :edit
+        end
     end 
 
     private 
